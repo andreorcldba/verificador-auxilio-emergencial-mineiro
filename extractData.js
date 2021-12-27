@@ -31,7 +31,7 @@ const boot = async (cpf_data, date_data, page, filename, count_data) => {
     let status = text.indexOf("Você atende aos critérios do Auxílio Emergencial") != -1 ? 0 : 1;
 
     if(!status) {
-        if(writeStream.write(`${cpf_data} \n`)) {
+        if(writeStream.write(`⠀${cpf_data} \n`)) {
             console.log('\x1b[32m', `CPF/NIS ${cpf_data} gravado no arquivo "${filename}"`);
         }else {
             console.log('\x1b[31m', 'Erro inesperado ao tentar gravar o arquivo');
@@ -52,6 +52,8 @@ const loadTxt = async (data, filename) => {
     
     const browser = await puppeteer.launch({
         headless: false,
+        defaultViewport: null,
+        args:['--start-maximized' ]
     });
         
     const page = await browser.newPage();
