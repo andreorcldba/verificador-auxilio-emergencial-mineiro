@@ -82,7 +82,7 @@ const loadTxt = async (data, filename) => {
         }
     }
     await browser.close();
-    console.log('\x1b[32m', `Importação finalizada com sucesso. Verifiquei o arquivo ${filename} para consultar os CPF/NIS que possuem direito ao benefício.`);
+    console.log('\x1b[32m', `Importação finalizada com sucesso. Verifique o arquivo ${filename} para consultar os CPF/NIS que possuem direito ao benefício.`);
 }
 
 const write = () => {
